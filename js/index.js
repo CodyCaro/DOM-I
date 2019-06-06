@@ -69,12 +69,18 @@ ctaImage.setAttribute('src', siteContent.cta["img-src"]);
 
 
 let mainContentHeaders = document.querySelectorAll(".main-content h4");
+let mainContentParagraphs = document.querySelectorAll(".main-content p");
 
 let headersToAdd = [];
+let paragraphsToAdd = [];
+
 Object.keys(siteContent["main-content"]).forEach(function (element) {
 
   if (element.includes("h4")) {
     headersToAdd.push(siteContent["main-content"][element]);
+  }
+  else if (element.includes("content")) {
+    paragraphsToAdd.push(siteContent["main-content"][element]);
   }
 
 });
@@ -82,17 +88,6 @@ Object.keys(siteContent["main-content"]).forEach(function (element) {
 for (let i = 0; i < headersToAdd.length; i++) {
   mainContentHeaders[i].textContent = headersToAdd[i];
 }
-
-let mainContentParagraphs = document.querySelectorAll(".main-content p");
-
-let paragraphsToAdd = [];
-Object.keys(siteContent["main-content"]).forEach(function (element) {
-
-  if (element.includes("content")) {
-    paragraphsToAdd.push(siteContent["main-content"][element]);
-  }
-
-});
 
 for (let i = 0; i < paragraphsToAdd.length; i++) {
   mainContentParagraphs[i].textContent = paragraphsToAdd[i];
