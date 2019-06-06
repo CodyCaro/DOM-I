@@ -45,7 +45,18 @@ let navLinks = document.querySelectorAll("nav a");
 
 for (let i = 0; i < navLinks.length; i++) {
   navLinks[i].text = siteContent.nav[`nav-item-${i + 1}`];
+  navLinks[i].style.color = "green";
 }
+
+let childLink = document.createElement("a");
+childLink.setAttribute("href", "#");
+childLink.textContent = "Secret Child Link";
+navLinks[0].appendChild(childLink);
+
+let preChildLink = document.createElement("a");
+preChildLink.setAttribute("href", "#");
+preChildLink.textContent = "Secret preChild Link";
+navLinks[0].prepend(preChildLink);
 
 let ctaHeaderOne = document.querySelector(".cta h1");
 ctaHeaderOne.textContent = siteContent.cta.h1;
