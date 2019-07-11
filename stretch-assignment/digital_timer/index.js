@@ -20,7 +20,6 @@ function displayTime() {
 
   if (secondsCounter > 1000) {
     secondOnes.textContent = secondsCounter.toString()[secondsOnesIndex];
-
     msHundreds.textContent = secondsCounter.toString()[1];
     msTens.textContent = secondsCounter.toString()[2];
   } else {
